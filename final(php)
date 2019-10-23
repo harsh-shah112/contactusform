@@ -1,0 +1,31 @@
+<?php
+
+$secretKey ='6LdoobIUAAAAAK7K8SLy0el_W7OghI4xG0nJ0fwv';
+//$siteKey ='6LdOZ7sUAAAAAFEZ2URt75ORjmnnX4vLhQi02vP9';
+
+if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response']))
+{ 
+          
+   $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secretKey.'&response='.$_POST['g-recaptcha-response']); 
+             
+            // Decode json data 
+            $responseData = json_decode($verifyResponse); 
+             
+            // If reCAPTCHA response is valid 
+            if($responseData->success)
+			{     
+                $status = 'success'; 
+				echo $status;
+                //$statusMsg = 'Your contact request has submitted successfully.'; 
+				//echo $statusMsg;
+                //$postData = '';
+            }else{ 
+                $statusMsg = 'Robot verification failed, please try again.'; 
+				echo $statusMsg;
+            } 
+}else{ 
+            $statusMsg = 'Please check on the reCAPTCHA box.'; 
+			echo $statusMsg;
+        } 
+		
+?>
