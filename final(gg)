@@ -61,6 +61,8 @@ function validateForm() {
 	
 	var x = document.forms["ctusform"]["brand"].value;
 	if (x == null || x == ""){
+		alert("please enter brand name!");
+        return false;
 	}
 	else{
 	if (x.match(alphabets))
@@ -91,17 +93,8 @@ function validateForm() {
 	}
 	var x = document.forms["ctusform"]["question"].value;
 	if (x == null || x == ""){
-	}
-	else{
-	if (x.match(question))
-		{
-		
-	}
-	else
-	{
 		alert("Please enter a comment");
 		return false;
-	}
 	}
 
 	var response= grecaptcha.getResponse();
