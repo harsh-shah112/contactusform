@@ -1,0 +1,12 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<tr>
+      <td colspan="2" align="right"><script type="text/javascript">document.write('<input type="submit" name="submit" value="Submit" onclick="loadDoc()" />');</script></td>
+    </tr>
+	<tr>
+      <td align="right"></td>
+	  <td>
+	<noscript><p style="color: red;"><b>Your browser does not support Javascript! <br/> Please enable JavaScript to submit form</b></p></noscript>
+	</td>
+    </tr>
